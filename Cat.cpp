@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 22:45:59 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/18 17:55:13 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/18 18:19:57 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <iostream>
 
 Cat::Cat(void) {
+  std::cout << "cat default constructor called" << std::endl;
   type_ = "Cat";
 }
 
@@ -29,7 +30,7 @@ Cat &Cat::operator=(const Cat &rhs) {
 }
 
 Cat::~Cat(void) {
-  std::cout << "cat constructor called" << std::endl;
+  std::cout << "cat destructor called" << std::endl;
 }
 
 void Cat::makeSound(void) const { std::cout << "meow~" << std::endl; }

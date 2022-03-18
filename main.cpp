@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:47:43 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/18 18:05:42 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/18 18:16:26 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongCat.hpp"
 
 int main(void) {
   std::cout << "--- basic test ---" << std::endl;
@@ -67,6 +68,14 @@ int main(void) {
               << "; Copy ctor: " << b.getType()
               << "; Copy assign: " << c.getType() 
               << std::endl;
+  }
+  std::cout << "--- test WrongCat --" << std::endl;
+  {
+    const WrongAnimal *cat = new WrongCat();
+
+    std::cout << cat->getType() << std::endl;
+    cat->makeSound();
+    delete cat;
   }
   return 0;
 }

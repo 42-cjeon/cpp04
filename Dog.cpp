@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 17:44:32 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/18 17:55:20 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/18 18:20:01 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <iostream>
 
 Dog::Dog(void) {
+  std::cout << "dog default constructor called" << std::endl;
   type_ = "Dog";
 }
 
@@ -29,7 +30,7 @@ Dog &Dog::operator=(const Dog &rhs) {
 }
 
 Dog::~Dog(void) {
-  std::cout << "dog constructor called" << std::endl;
+  std::cout << "dog destructor called" << std::endl;
 }
 
 void Dog::makeSound(void) const { std::cout << "Bark!!" << std::endl; }

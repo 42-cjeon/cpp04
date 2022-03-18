@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:48:52 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/17 22:52:52 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/18 17:54:30 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Animal {
     virtual ~Animal(void);
 
     const std::string &getType(void) const;
-    virtual void makeSound(void);
+    virtual void makeSound(void) const;
 
   protected:
     std::string type_;

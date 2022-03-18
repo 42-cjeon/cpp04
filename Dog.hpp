@@ -6,17 +6,23 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:52:47 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/17 18:53:03 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/18 17:55:01 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_H_
 #define DOG_H_
 
-class Dog {
-  public:
+#include "Animal.hpp"
 
-  private:
+class Dog : public Animal {
+  public:
+    Dog(void);
+    Dog(const Dog &origin);
+    Dog &operator=(const Dog &rhs);
+    ~Dog(void);
+
+    void makeSound(void) const;
 };
 
 #endif

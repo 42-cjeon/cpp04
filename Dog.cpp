@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 17:44:32 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/18 18:20:01 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/18 18:23:36 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ Dog &Dog::operator=(const Dog &rhs) {
   return *this;
 }
 
-Dog::~Dog(void) {
-  std::cout << "dog destructor called" << std::endl;
-}
+Dog::~Dog(void) { std::cout << "dog destructor called" << std::endl; }
 
 void Dog::makeSound(void) const { std::cout << "Bark!!" << std::endl; }

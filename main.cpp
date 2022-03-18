@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:47:43 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/18 18:16:26 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/18 18:23:46 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,34 +40,28 @@ int main(void) {
     Dog a;
     Dog b = a;
     Dog c;
-  
+
     c = a;
-    std::cout << "origin: " << a.getType() 
-              << "; Copy ctor: " << b.getType()
-              << "; Copy assign: " << c.getType() 
-              << std::endl;
+    std::cout << "origin: " << a.getType() << "; Copy ctor: " << b.getType()
+              << "; Copy assign: " << c.getType() << std::endl;
   }
   {
     Cat a;
     Cat b = a;
     Cat c;
-  
+
     c = a;
-    std::cout << "origin: " << a.getType() 
-              << "; Copy ctor: " << b.getType()
-              << "; Copy assign: " << c.getType() 
-              << std::endl;
+    std::cout << "origin: " << a.getType() << "; Copy ctor: " << b.getType()
+              << "; Copy assign: " << c.getType() << std::endl;
   }
   {
     Animal a;
     Animal b = a;
     Animal c;
-  
+
     c = a;
-    std::cout << "origin: " << a.getType() 
-              << "; Copy ctor: " << b.getType()
-              << "; Copy assign: " << c.getType() 
-              << std::endl;
+    std::cout << "origin: " << a.getType() << "; Copy ctor: " << b.getType()
+              << "; Copy assign: " << c.getType() << std::endl;
   }
   std::cout << "--- test WrongCat --" << std::endl;
   {

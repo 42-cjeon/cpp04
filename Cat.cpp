@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 22:45:59 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/18 18:19:57 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/18 18:23:28 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ Cat &Cat::operator=(const Cat &rhs) {
   return *this;
 }
 
-Cat::~Cat(void) {
-  std::cout << "cat destructor called" << std::endl;
-}
+Cat::~Cat(void) { std::cout << "cat destructor called" << std::endl; }
 
 void Cat::makeSound(void) const { std::cout << "meow~" << std::endl; }

@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 18:15:01 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/18 18:17:54 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/18 18:23:55 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &rhs) {
   return *this;
 }
 
-WrongAnimal::~WrongAnimal(void) { std::cout << "WrongAnimal destructor called" << std::endl; }
+WrongAnimal::~WrongAnimal(void) {
+  std::cout << "WrongAnimal destructor called" << std::endl;
+}
 
 const std::string &WrongAnimal::getType(void) const { return type_; }
 

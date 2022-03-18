@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 18:30:10 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/18 19:28:30 by cjeon            ###   ########.fr       */
+/*   Created: 2022/03/17 18:52:06 by cjeon             #+#    #+#             */
+/*   Updated: 2022/03/18 19:56:21 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_H_
-#define BRAIN_H_
+#ifndef CAT_H_
+#define CAT_H_
 
-#include <string>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class Brain {
+class Cat : public Animal {
  public:
-  Brain(void);
-  Brain(const Brain &origin);
-  Brain &operator=(const Brain &rhs);
-  std::string &operator[](int i);
-  ~Brain(void);
-  enum { kMaxIdeas = 100 };
+  Cat(void);
+  Cat(const Cat &origin);
+  Cat &operator=(const Cat &rhs);
+  ~Cat(void);
+
+  void makeSound(void) const;
+  const std::string &getIdea(int index) const;
+  void setIdea(int index, const std::string &idea);
 
  private:
-  std::string ideas_[kMaxIdeas];
+  Brain *brain_;
 };
 
 #endif

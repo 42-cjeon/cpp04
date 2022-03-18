@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 18:30:10 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/18 19:28:30 by cjeon            ###   ########.fr       */
+/*   Created: 2022/03/17 18:48:52 by cjeon             #+#    #+#             */
+/*   Updated: 2022/03/18 18:23:25 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_H_
-#define BRAIN_H_
+#ifndef ANIMAL_H_
+#define ANIMAL_H_
 
 #include <string>
 
-class Brain {
+class Animal {
  public:
-  Brain(void);
-  Brain(const Brain &origin);
-  Brain &operator=(const Brain &rhs);
-  std::string &operator[](int i);
-  ~Brain(void);
-  enum { kMaxIdeas = 100 };
+  Animal(void);
+  Animal(const Animal &origin);
+  Animal &operator=(const Animal &rhs);
+  virtual ~Animal(void);
 
- private:
-  std::string ideas_[kMaxIdeas];
+  const std::string &getType(void) const;
+  virtual void makeSound(void) const;
+
+ protected:
+  std::string type_;
 };
 
 #endif

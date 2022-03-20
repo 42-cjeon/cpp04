@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 02:13:44 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/19 04:05:28 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/21 01:52:29 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Character::~Character(void) {
   }
 }
 
-Character &Character::operator=(const Character &rhs) { 
+Character &Character::operator=(const Character &rhs) {
   if (this == &rhs) {
     return *this;
   }
@@ -79,11 +79,9 @@ void Character::unequip(int idx) {
 
 void Character::use(int idx, ICharacter &target) {
   if (idx < 0 || kMaxMateria < idx) {
-    std::cout << "index must be in range [0 ~ " << kMaxMateria - 1 << "]" << std::endl;
     return;
   }
   if (materia_[idx] == NULL) {
-    std::cout << "materia slot " << idx << " is empty" << std::endl;
     return;
   }
   materia_[idx]->use(target);

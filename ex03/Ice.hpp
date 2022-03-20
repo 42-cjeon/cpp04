@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 03:02:07 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/19 03:02:56 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/21 01:54:56 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 class Ice : public AMateria {
  public:
   Ice(void);
-  Ice(const Ice &origin);
   ~Ice(void);
 
   AMateria *clone(void) const;
   void use(ICharacter &target);
 
  private:
+  Ice(const Ice &origin);
   Ice &operator=(const Ice &rhs);
 };
 

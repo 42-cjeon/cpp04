@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 02:44:51 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/19 04:09:33 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/21 01:54:32 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 #include <iostream>
 
 Cure::Cure(void) : AMateria("cure") {}
-
-Cure::Cure(const Cure& origin) : AMateria(origin.type_) {}
 
 Cure::~Cure(void) {}
 

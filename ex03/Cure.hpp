@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 02:43:40 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/19 03:00:33 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/21 01:54:23 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 class Cure : public AMateria {
  public:
   Cure(void);
-  Cure(const Cure &origin);
   ~Cure(void);
 
   AMateria *clone(void) const;
   void use(ICharacter &target);
-  
-  private:
-    Cure &operator=(const Cure &rhs);
+
+ private:
+  Cure(const Cure &origin);
+  Cure &operator=(const Cure &rhs);
 };
 
 #endif

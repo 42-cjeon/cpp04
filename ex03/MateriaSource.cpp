@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 00:39:50 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/19 04:18:35 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/21 02:02:06 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void MateriaSource::learnMateria(AMateria *materia)
   }
   for (int i = 0; i < kMaxMateria; ++i) {
     if (materia_[i] == NULL) {
-      materia_[i] = materia->clone();
+      materia_[i] = materia;
       return;
     }
   }

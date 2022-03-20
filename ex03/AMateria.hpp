@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 00:21:12 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/19 04:28:50 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/21 01:48:56 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class ICharacter;
 class AMateria {
   public:
     AMateria(const std::string &type);
-    AMateria (const AMateria &origin);
     virtual ~AMateria();
 
     const std::string &getType(void) const;
@@ -32,6 +31,7 @@ class AMateria {
 
   private:
     AMateria(void);
+    AMateria (const AMateria &origin);
     AMateria &operator=(const AMateria &rhs);
 
 };

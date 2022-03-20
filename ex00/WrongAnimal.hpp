@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 18:15:08 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/18 18:23:58 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/21 01:19:18 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 class WrongAnimal {
  public:
   WrongAnimal(void);
-  WrongAnimal(const WrongAnimal &origin);
-  WrongAnimal &operator=(const WrongAnimal &rhs);
   ~WrongAnimal(void);
 
   const std::string &getType(void) const;
@@ -27,6 +25,10 @@ class WrongAnimal {
 
  protected:
   std::string type_;
+
+ private:
+  WrongAnimal(const WrongAnimal &origin);
+  WrongAnimal &operator=(const WrongAnimal &rhs);
 };
 
 #endif

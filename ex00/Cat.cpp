@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 22:45:59 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/18 18:23:28 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/21 01:18:04 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,6 @@
 Cat::Cat(void) {
   std::cout << "cat default constructor called" << std::endl;
   type_ = "Cat";
-}
-
-Cat::Cat(const Cat &origin) : Animal(origin) {
-  std::cout << "cat copy constructor called" << std::endl;
-}
-
-Cat &Cat::operator=(const Cat &rhs) {
-  std::cout << "cat assignment operator called" << std::endl;
-  Animal::operator=(rhs);
-  return *this;
 }
 
 Cat::~Cat(void) { std::cout << "cat destructor called" << std::endl; }

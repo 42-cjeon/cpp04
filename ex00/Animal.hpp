@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:48:52 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/18 18:23:25 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/21 01:18:10 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 class Animal {
  public:
   Animal(void);
-  Animal(const Animal &origin);
-  Animal &operator=(const Animal &rhs);
   virtual ~Animal(void);
 
   const std::string &getType(void) const;
@@ -27,6 +25,10 @@ class Animal {
 
  protected:
   std::string type_;
+
+ private:
+  Animal(const Animal &origin);
+  Animal &operator=(const Animal &rhs);
 };
 
 #endif

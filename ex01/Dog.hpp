@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:52:47 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/18 19:59:10 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/21 01:40:06 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class Dog : public Animal {
   const std::string &getIdea(int index) const;
   void setIdea(int index, const std::string &idea);
 
-  private:
-    Brain *brain_;
+ private:
+  Brain *brain_;
 };
 
 #endif

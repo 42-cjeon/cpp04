@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 22:45:59 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/18 19:59:08 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/21 01:43:48 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ Cat::Cat(void) {
   brain_ = new Brain();
 }
 
-Cat::Cat(const Cat &origin) : Animal(origin) {
+Cat::Cat(const Cat &origin) {
   std::cout << "cat copy constructor called" << std::endl;
+  type_ = "Cat";
   brain_ = new Brain();
   *brain_ = *origin.brain_;
 }
@@ -29,7 +30,6 @@ Cat::Cat(const Cat &origin) : Animal(origin) {
 Cat &Cat::operator=(const Cat &rhs) {
   std::cout << "cat assignment operator called" << std::endl;
   *brain_ = *rhs.brain_;
-  Animal::operator=(rhs);
   return *this;
 }
 

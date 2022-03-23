@@ -6,7 +6,7 @@
 /*   By: cjeon <cjeon@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 04:00:06 by cjeon             #+#    #+#             */
-/*   Updated: 2022/03/23 19:43:37 by cjeon            ###   ########.fr       */
+/*   Updated: 2022/03/24 03:14:23 by cjeon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 #include <iostream>
 
 void testDeepCopy(void) {
+  std::cout << "---- test deep copy ----" << std::endl;
   AMateria *ice = new Ice;
   AMateria *cure = new Cure;
-  std::cout << "---- test deep copy ----" << std::endl;
 
   ICharacter *me = new Character("me");
   
@@ -31,7 +31,7 @@ void testDeepCopy(void) {
     temp.learnMateria(cure);
     MateriaSource *temp_cpy_address = new MateriaSource(dynamic_cast<MateriaSource &>(temp));
     source = temp_cpy_address; 
-  } // no unexpected allowed;
+  } // no unexpected quit allowed;
   AMateria *copy_ice = source->createMateria("ice");
   me->equip(copy_ice);
   ICharacter *shadow_of_me = new Character(*dynamic_cast<Character *>(me));
@@ -48,13 +48,68 @@ void testDeepCopy(void) {
 }
 
 void testCombined(void) {
+  std::cout << "---- test combined ----" << std::endl;
+
+  AMateria *ice = new Ice;
+  AMateria *cure = new Cure;
+
+  IMateriaSource *source = new MateriaSource;
+
+  source->learnMateria(ice);
+  source->learnMateria(ice);
+  source->learnMateria(NULL);
+  source->learnMateria(cure);
+  source->learnMateria(cure);
+  source->learnMateria(ice);
+  IMateriaSource *new_source = new MateriaSource(dynamic_cast<MateriaSource &>(*source));
+
+  Character *me = new Character("me");
+  Character *bob = new Character("bob");
+
+  bob->equip(NULL);
+  bob->unequip(42);
+  AMateria *temp = new_source->createMateria("ice");
+  bob->equip(temp);
+  delete temp;
+  temp = new_source->createMateria("cure");
+  bob->equip(temp);
+  delete temp;
+  temp = new_source->createMateria("unknown");
+  bob->equip(temp);
+  temp = new_source->createMateria("ice");
+  bob->equip(temp);
+  delete temp;
+  temp = new_source->createMateria("ice");
+  bob->equip(temp);
+  delete temp;
+  temp = new_source->createMateria("ice");
+  bob->equip(temp);
+  delete temp;
+
+  ICharacter *shadow = new Character(dynamic_cast<Character &>(*bob));
+  dynamic_cast<Character &>(*me) = dynamic_cast<Character &>(*shadow);
+
+  me->use(-1, *bob);
+  me->use(0, *bob);
+  me->use(1, *bob);
+  me->use(2, *bob);
+  me->use(3, *bob);
+  me->use(4, *bob);
+
+  delete me;
+  delete bob;
+  delete shadow;
+  delete new_source;
+  delete source;
+  delete ice;
+  delete cure;
 }
 
 void testCharacter(void) {
-  AMateria *ice = new Ice;
-  AMateria *cure = new Cure;
   std::cout << "---- test character ----" << std::endl;
   std::cout << "--- test try to equip NULL materia ---" << std::endl;
+  AMateria *ice = new Ice;
+  AMateria *cure = new Cure;
   {
     ICharacter *bob = new Character("bob");
 
@@ -123,9 +178,9 @@ void testCharacter(void) {
 }
 
 void testMateriaSource(void) {
-  AMateria *ice = new Ice;
-  AMateria *cure = new Ice;
   std::cout << "---- test materia source ----" << std::endl;
+  AMateria *ice = new Ice;
+  AMateria *cure = new Cure;
   std::cout << "--- test try to learn NULL ---" << std::endl;
   {
     IMateriaSource *source = new MateriaSource;
@@ -154,6 +209,6 @@ int main() {
   testCharacter();
   testMateriaSource();
   testDeepCopy();
-  while (42);
+  testCombined();
   return 0;
 }
